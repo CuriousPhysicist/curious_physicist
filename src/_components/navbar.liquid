@@ -1,5 +1,7 @@
 <nav>
-  <a href="/">{{ "Home" | upcase }}</a>
-  <a href="/about">{{ "About Me" | upcase }}</a>
-  <!-- <a href="/posts">Posts</a> -->
+  {% for page in pages %}
+    {% if page.title %}
+      <a href="{{ page.url }}">{{ page.title | upcase }}</a>
+    {% endif %}
+  {% endfor %}
 </nav>
